@@ -21,6 +21,8 @@ Looking closer, we can see that 4 seasons from now, Coach Franklin's win percent
 - 59.72311% in Season 3
 - 57.47641% in Season 4
 
+  These numbers are all produced by running the model a couple of times with a random seed of 42. 
+
 POTENTIALLY (given an extrapolated value of +/- 3 percentage points, given confounding variables and adjustment)
 
 <img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/e046380c-b999-4d1e-ba69-f3522cdcd658" />
