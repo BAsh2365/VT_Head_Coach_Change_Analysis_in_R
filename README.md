@@ -105,7 +105,7 @@ https://www.rdocumentation.org/packages/ranger/versions/0.16.0/topics/ranger
 
 https://datascienceharp.medium.com/cant-decide-between-a-linear-regression-or-a-random-forest-here-let-me-help-ab941b94da4c
 
-Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), debugging/accuracy, and Normalizing Predictors 
+Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML vs Ridge), debugging/accuracy, and Normalizing Predictors 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
