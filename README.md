@@ -41,7 +41,7 @@ https://www.sports-reference.com/?utm_source=cfb&utm_medium=sr_xsite&utm_campaig
 
 https://www.r-bloggers.com/2019/03/a-gentle-introduction-to-shap-values-in-r/#google_vignette
 
-Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML)
+Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), and Normalizing Predictors 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
