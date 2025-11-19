@@ -37,11 +37,18 @@ Looking closer, we can see that 4 seasons from now, Coach Franklin's win percent
 
 POTENTIALLY (given an extrapolated value of +/- 3 percentage points, given confounding variables and adjustment)
 
-<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/e046380c-b999-4d1e-ba69-f3522cdcd658" />
+<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/9b1e5b84-909f-419e-b624-156323d5996a" />
 
-Here we see the Shapley values plot. We see here that the amount of games won and Offensive passing yards seem to play a large role in our model (given the importance on the x-axis and the features on the y-axis). We see the given values + variance below: 
 
-<img width="653" height="483" alt="image" src="https://github.com/user-attachments/assets/9b20a408-32de-4ef8-8759-13fc87cea375" />
+Here we see the Shapley values plot. We see here that the amount of games lost and Offensive passing yards seem to play a large role in our model (given the importance measured using (phi- stemming from game theory), the x-axis, and the features on the y-axis). We see the given values + variance below: 
+
+<img width="728" height="346" alt="image" src="https://github.com/user-attachments/assets/039b6930-b9d1-4e50-8859-ae09e564fe46" />
+
+
+As well as the RSME and RAE results:
+
+<img width="671" height="110" alt="image" src="https://github.com/user-attachments/assets/82b34f25-feac-46a4-b3b5-4ef4ea6e2fdc" />
+
 
 With Franklin coming in, a new offensive scheme may be in play for the boys in maroon. 
 
