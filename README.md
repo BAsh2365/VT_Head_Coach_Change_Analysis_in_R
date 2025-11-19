@@ -21,7 +21,7 @@ My R code examines the last four seasons (2022-2025) of Brent Pry vs. James Fran
 
 
 
-# Analysis
+# Analysis (Random forest)
 
 Average predicted win rate under Coach Franklin (based on R code): 57.85%
 
@@ -57,7 +57,7 @@ Given that Coach Franklin needs some time to settle in, adopt his recruitment st
 
 UPDATE: This Random Forest model, upon further inspection, is not the greatest model for accuracy, even with using an in-memory version (Ranger) (as the MAE and RMSE values don't line up with the R^2 value of 1, which indicates overfitting).
 
-# Ridge model regression
+# Ridge model regression Analysis (More accurate)
 
 We use the ridge model regression with a more accurate R^2 value of 0.512 instead of 1 with similar RSME and RAE stats.
 
