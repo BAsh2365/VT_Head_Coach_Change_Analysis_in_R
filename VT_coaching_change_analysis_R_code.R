@@ -1,0 +1,104 @@
+#Comparing Average Win Percentage across all 4 seasons 
+
+VT_avg_wins_2022_2025 <- sum(virginia_tech_stats_2022_2025$Games_Won_VT) 
+
+Penn_state_avg_wins_2022_2025 <- sum(penn_state_football_stats$Games_Won_PS)
+
+
+#Not a great metric right now, let's try win percentage rate
+
+VT_win_percent <- sum(virginia_tech_stats_2022_2025$Games_Won_VT + 0) / sum(virginia_tech_stats_2022_2025$Games_Won_VT + virginia_tech_stats_2022_2025$Games_Lost_VT) * 100
+
+#40% winning percentage over the last 4 seasons from Brent Pry
+
+PS_win_percentage <- sum(penn_state_football_stats$Games_Won_PS + 0) / sum(penn_state_football_stats$Games_Won_PS + penn_state_football_stats$Games_Lost_PS) * 100
+#73.1% winning percentage by James Franklin over the last 4 seasons
+
+#average PPG
+Penn_avg_ppg <- mean(penn_state_football_stats$PSU_Points_Per_Game) #33.9 pts per game on average
+VT_avg_ppg <- mean(virginia_tech_stats_2022_2025$VT_Points_Per_Game) #25.1 pts per game on average
+
+#for ML
+library(readxl)
+library(caret)
+library(randomForest)
+library(iml)
+
+# Loading data
+vt_data <- read_excel("C:/Users/bharg/Downloads/virginia_tech_stats_2022_2025.xlsx")
+ps_data <- read_excel("C:/Users/bharg/Downloads/penn_state_football_stats.xlsx")
+
+# identifiers
+vt_data$Team <- "VT"
+vt_data$Coach <- "Brent Pry"
+ps_data$Team <- "PSU"
+ps_data$Coach <- "James Franklin"
+
+# Combine datasets for modeling
+combined_data <- rbind(
+  data.frame(
+    Team = vt_data$Team,
+    Games_Won = vt_data$Games_Won_VT,
+    Games_Lost = vt_data$Games_Lost_VT,
+    Points_Per_Game = vt_data$VT_Points_Per_Game,
+    Offensive_Yards_passing = vt_data$VT_Pass_Total_Yards,
+    Offensive_Yards_Rushing = vt_data$VT_Rush_Total_Yards,
+    TD = vt_data$VT_Total_TDs,
+    Defensive_Yards_Allowed_Per_Game = vt_data$OPP_Avg_Yards_Per_Game,
+    Coach = vt_data$Coach
+  ),
+  data.frame(
+    Team = ps_data$Team,
+    Games_Won = ps_data$Games_Won_PS,
+    Games_Lost = ps_data$Games_Lost_PS,
+    Points_Per_Game = ps_data$PSU_Points_Per_Game,
+    Offensive_Yards_passing = ps_data$PSU_Passing_Total,
+    Offensive_Yards_Rushing = ps_data$PSU_Rushing_Total,
+    TD = ps_data$PSU_Total_TDs_Scored,
+    Defensive_Yards_Allowed_Per_Game = ps_data$OPP_Avg_Per_Game,
+    Coach = ps_data$Coach
+  )
+)
+
+# calculating win percentage based on all of these features/variables
+combined_data$Win_Percentage <- combined_data$Games_Won / (combined_data$Games_Won + combined_data$Games_Lost) * 100
+
+# Encode Coach as a factor (meaning that we are studying how the coach change affects the win rate)
+combined_data$Coach <- as.factor(combined_data$Coach)
+
+# Normalizing predictors
+normalize <- function(x) { (x - min(x, na.rm=TRUE)) / (max(x, na.rm=TRUE) - min(x, na.rm=TRUE)) }
+predictor_cols <- c("Games_Won", "Games_Lost", "Points_Per_Game", "Offensive_Yards_passing",
+                    "Offensive_Yards_Rushing", "TD", "Defensive_Yards_Allowed_Per_Game")
+combined_data[predictor_cols] <- lapply(combined_data[predictor_cols], normalize)
+
+# Split data
+train_data <- subset(combined_data, Coach == "James Franklin")
+test_data <- subset(combined_data, Team == "VT")
+
+# Train Random Forest
+rf_model <- train(
+  Win_Percentage ~ Games_Won + Games_Lost + Points_Per_Game +
+    Offensive_Yards_passing + Offensive_Yards_Rushing + TD + Defensive_Yards_Allowed_Per_Game,
+  data = train_data,
+  method = "rf"
+)
+
+# Predict VT win percentage under Franklin
+rf_pred <- predict(rf_model, newdata = test_data)
+print("Predicted VT win percentage under James Franklin (normalized predictors):")
+print(rf_pred)
+
+# Average predicted win percentage
+avg_predicted_win_percent <- mean(rf_pred)
+print("Average predicted VT win percentage under James Franklin:")
+print(avg_predicted_win_percent)
+
+# SHAP analysis with iml
+train_predictors <- train_data[, predictor_cols]
+predictor <- Predictor$new(rf_model, data = train_predictors, y = train_data$Win_Percentage)
+
+test_predictors <- test_data[, predictor_cols]
+shap <- Shapley$new(predictor, x.interest = test_predictors[1, ])
+print(shap$results)
+plot(shap)
