@@ -65,7 +65,7 @@ https://bgreenwell.github.io/intro-fastshap/slides.html#1
 
 https://datasciencelessons.wordpress.com/2019/08/13/random-forest-for-classification-in-r/
 
-Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), and Normalizing Predictors 
+Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), partial semantic debugging, and Normalizing Predictors 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
