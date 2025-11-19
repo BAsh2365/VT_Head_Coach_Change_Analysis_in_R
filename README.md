@@ -27,26 +27,7 @@ POTENTIALLY (given an extrapolated value of +/- 3 percentage points, given confo
 
 Here we see the Shapley values plot. We see here that the amount of games won and Offensive passing yards seem to play a large role in our model (given the importance on the x-axis and the features on the y-axis). We see the given values + variance below: 
 
-
-feature                                phi  phi.var
-1                        Games_Won -3.7514968 2.517410
-2                       Games_Lost -3.3919744 2.053284
-3                  Points_Per_Game -3.5463372 2.281451
-4          Offensive_Yards_passing -4.1793462 3.125304
-5          Offensive_Yards_Rushing -2.6610295 1.270499
-6                               TD -3.7495593 2.514717
-7 Defensive_Yards_Allowed_Per_Game -0.7455365 0.522387
-
-
-feature.value                                     
-1                        Games_Won=0.230769230769231
-2                                       Games_Lost=1
-3                                  Points_Per_Game=0
-4           Offensive_Yards_passing=0.26905132192846
-5                          Offensive_Yards_Rushing=0
-6                                               TD=0
-7 Defensive_Yards_Allowed_Per_Game=0.972288202692003
-
+<img width="653" height="483" alt="image" src="https://github.com/user-attachments/assets/9b20a408-32de-4ef8-8759-13fc87cea375" />
 
 With Franklin coming in, a new offensive scheme may be in play for the boys in maroon. 
 
