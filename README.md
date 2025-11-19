@@ -11,13 +11,13 @@ Images taken from:
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Using random forest regression values (MAE and RMSE, not OOB and Confusion Matrix) and summary statistics to predict how well VT does in the future based on the head coaching change (Brent Pry to James Franklin)
+Using random forest regression values (Corrected to Ridge Regression, see below to compare model results) (MAE and RMSE, not OOB and Confusion Matrix) and summary statistics to predict how well VT does in the future based on the head coaching change (Brent Pry to James Franklin)
 
 This R code showcases the shift in the Virginia Tech Locker room with head coach James Franklin taking over the program. Franklin (previously at Penn State) has a 68% win rate over 188 games.
 
 To predict and compare how Franklin MAY do compared to previous locker rooms, we must level the playing field before running our Machine Learning Model.
 
-My R code examines the last four seasons (2022-2025) of Brent Pry vs. James Franklin to equalize the sample size. We will record wins and losses as they occur for the 2025 season and calculate the average win rate, along with other factors such as average points per game, offensive passing yards, and rushing yards, to be applied to a random forest model. We also normalize the values (as they are on different scales) for better interpretability. There is also a SHAP values plot to showcase differences regarding which variable/features mostly affect our prediction.
+My R code examines the last four seasons (2022-2025) of Brent Pry vs. James Franklin to equalize the sample size. We will record wins and losses as they occur for the 2025 season and calculate the average win rate, along with other factors such as average points per game, offensive passing yards, and rushing yards, to be applied to a random forest and ridge regression models. We also normalize the values (as they are on different scales) for better interpretability. There is also a SHAP values plot to showcase differences regarding which variable/features mostly affect our prediction.
 
 
 
@@ -55,7 +55,34 @@ With Franklin coming in, a new offensive scheme may be in play for the boys in m
 
 Given that Coach Franklin needs some time to settle in, adopt his recruitment style, bolster the playbook, etc., these predictions should be accurate given the normalized data showcased here. 
 
-The model is not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me.
+UPDATE: This Random Forest model, upon further inspection, is not the greatest model for accuracy, even with using an in-memory version (Ranger) (as the MAE and RMSE values don't line up with the R^2 value of 1, which indicates overfitting).
+
+# Ridge model regression
+
+We use the ridge model regression with a more accurate R^2 value of 0.512 instead of 1 with similar RSME and RAE stats.
+
+The Win percentage rates are shown here:
+
+<img width="781" height="181" alt="image" src="https://github.com/user-attachments/assets/eb9fa707-6aaa-499a-b41f-2b4c40193457" />
+
+Similar estimates, with Coach Franklin projected to win about 6 to 7 games in a full 12 game season as he takes over.
+
+The SHAP values plot for the more accurate Ridge regression is shown here:
+
+<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/56f6a8e2-1b29-4f7f-9ade-74c5f749708f" />
+
+Points per game and games lost are the two big contributors here for our model.
+
+with the values shown here:
+<img width="650" height="337" alt="image" src="https://github.com/user-attachments/assets/9ed907f5-1d63-436c-ae89-c828ebbd38eb" />
+
+
+The RSME/RAE LOOCV results shown here (leaving one value out for cross-validation for more accurate model results due to sample size):
+
+<img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
+
+
+These models are not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me. Ridge regression seems to be more accruate for sample size.
 
 
 # References 
@@ -72,7 +99,11 @@ https://bgreenwell.github.io/intro-fastshap/slides.html#1
 
 https://datasciencelessons.wordpress.com/2019/08/13/random-forest-for-classification-in-r/
 
-Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), partial semantic debugging, and Normalizing Predictors 
+https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorithms/
+
+https://www.rdocumentation.org/packages/ranger/versions/0.16.0/topics/ranger
+
+Use of Claude 4.5 Sonnet for organized data cleaning/collection, Use of GitHub Copilot for Code Assistance on Model fit (random forest ML), debugging/accuracy, and Normalizing Predictors 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
