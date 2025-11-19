@@ -25,10 +25,12 @@ POTENTIALLY (given an extrapolated value of +/- 3 percentage points, given confo
 
 <img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/e046380c-b999-4d1e-ba69-f3522cdcd658" />
 
-Here we see the Shapley values plot. We see here that the amount of games won and Offensive passing yards seem to play a large role in our model. With Franklin coming in, a new offensive scheme may be in play for the boys in maroon. 
+Here we see the Shapley values plot. We see here that the amount of games won and Offensive passing yards seem to play a large role in our model (given the importance on the x-axis and the features on the y-axis). With Franklin coming in, a new offensive scheme may be in play for the boys in maroon. 
 
 
 Given that Coach Franklin needs some time to settle in, adopt his recruitment style, bolster the playbook, etc., these predictions should be accurate given the normalized data showcased here. 
+
+The model is not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me.
 
 
 # References 
@@ -37,7 +39,7 @@ https://help.football.cbssports.com/s/article/How-are-ties-calculated-for-winnin
 
 https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm#overview
 
-https://www.sports-reference.com/?utm_source=cfb&utm_medium=sr_xsite&utm_campaign=2023_01_srnav (VT data, PSU data, coaching data)
+https://www.sports-reference.com/?utm_source=cfb&utm_medium=sr_xsite&utm_campaign=2023_01_srnav (VT data, PSU data, coaching data cross-checking)
 
 https://www.r-bloggers.com/2019/03/a-gentle-introduction-to-shap-values-in-r/#google_vignette
 
