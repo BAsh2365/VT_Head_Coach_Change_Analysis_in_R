@@ -67,10 +67,22 @@ combined_data$Win_Percentage <- combined_data$Games_Won / (combined_data$Games_W
 combined_data$Coach <- as.factor(combined_data$Coach)
 
 # Normalize predictors (Min-Max scaling)
-normalize <- function(x) { (x - min(x, na.rm=TRUE)) / (max(x, na.rm=TRUE) - min(x, na.rm=TRUE)) }
-predictor_cols <- c("Games_Won", "Games_Lost", "Points_Per_Game", "Offensive_Yards_passing",
+minmax_scale <- function(x) {
+  lo <- min(x, na.rm = TRUE)
+  hi <- max(x, na.rm = TRUE)
+  rng <- hi - lo
+  if (!is.finite(rng) || rng == 0) return(rep(0, length(x)))
+  (x - lo) / rng
+}
+
+predictor_cols <- c("Games_Won", "Games_Lost","Points_Per_Game", "Offensive_Yards_passing",
                     "Offensive_Yards_Rushing", "TD", "Defensive_Yards_Allowed_Per_Game")
-combined_data[predictor_cols] <- lapply(combined_data[predictor_cols], normalize)
+
+for (col in predictor_cols) {
+  combined_data[[col]] <- minmax_scale(combined_data[[col]])
+}
+
+combined_data[predictor_cols] <- lapply(combined_data[predictor_cols],minmax_scale)
 
 # Split data
 train_data <- subset(combined_data, Coach == "James Franklin")
@@ -82,8 +94,11 @@ rf_model <- train(
   Win_Percentage ~ Games_Won + Games_Lost + Points_Per_Game +
     Offensive_Yards_passing + Offensive_Yards_Rushing + TD + Defensive_Yards_Allowed_Per_Game,
   data = train_data,
-  method = "rf"
+  method = "rf",
+  metric = "RSME"
 )
+
+rf_model$results
 
 # Predict VT win percentage under Franklin
 rf_pred <- predict(rf_model, newdata = test_data)
@@ -94,6 +109,8 @@ print(rf_pred)
 avg_predicted_win_percent <- mean(rf_pred)
 print("Average predicted VT win percentage under James Franklin:")
 print(avg_predicted_win_percent)
+
+
 
 # SHAP analysis with iml
 train_predictors <- train_data[, predictor_cols]
