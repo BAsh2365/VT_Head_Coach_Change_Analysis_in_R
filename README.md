@@ -1,4 +1,12 @@
 # VT_Head_Coach_Change_Analysis_in_R
+
+<img width="400" height="283" alt="image" src="https://github.com/user-attachments/assets/eea3f376-f30e-44cb-a3f9-e41fa2474f91" />  X <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2b4bccc0-8583-4870-8f88-8e2d810727b7" />
+
+Images taken from: 
+- https://brand.vt.edu/licensing/university-trademarks.html#guidelines
+- https://hokiesports.com/news/2025/11/17/james-franklin-announced-as-new-leader-of-virginia-tech-football
+
+
 Using random forest values and summary statistics to predict how well VT does in the future based on the head coaching change (Brent Pry to James Franklin)
 
 This R code showcases the shift in the Virginia Tech Locker room with head coach James Franklin taking over the program. Franklin (previously at Penn State) has a 68% win rate over 188 games.
