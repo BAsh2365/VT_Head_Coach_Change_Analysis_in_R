@@ -65,7 +65,7 @@ The Win percentage rates are shown here:
 
 <img width="781" height="181" alt="image" src="https://github.com/user-attachments/assets/eb9fa707-6aaa-499a-b41f-2b4c40193457" />
 
-Similar estimates, with Coach Franklin projected to win about 6 to 7 games in a full 12 game season as he takes over.
+Similar estimates, with Coach Franklin projected to win about 6 to 7 games in a full 12-game season as he takes over.
 
 The SHAP values plot for the more accurate Ridge regression is shown here:
 
@@ -82,7 +82,7 @@ The RSME/RAE LOOCV results shown here (leaving one value out for cross-validatio
 <img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
 
 
-These models are not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me. Ridge regression seems to be more accruate for sample size.
+These models are not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me. Ridge regression seems to be more accurate for the given sample size.
 
 
 # References 
