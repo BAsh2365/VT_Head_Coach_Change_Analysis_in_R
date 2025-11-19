@@ -11,13 +11,15 @@ My R code examines the last four seasons (2022-2025) of Brent Pry vs. James Fran
 
 # Analysis
 
-Average predicted win rate under Coach Franklin (based on R code): 57.92%, meaning that in a 12-game season (excluding bowl games), Coach Franklin should win around 6 or more games when he takes over (theoretically speaking)
+Average predicted win rate under Coach Franklin (based on R code): 57.92%
+
+This means that in a 12-game season (excluding bowl games), Coach Franklin should win around 6 or more games when he takes over (theoretically speaking)
 
 Looking closer, we can see that 4 seasons from now, Coach Franklin's win percentages may be:
-53.51897% in Season 1
-60.95917% in Season 2
-59.72311% in Season 3
-57.47641% in Season 4
+- 53.51897% in Season 1
+- 60.95917% in Season 2
+- 59.72311% in Season 3
+- 57.47641% in Season 4
 
 POTENTIALLY (given an extrapolated value of +/- 3 percentage points, given confounding variables and adjustment)
 
