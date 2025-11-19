@@ -8,6 +8,8 @@ Images taken from:
 - https://brand.vt.edu/licensing/university-trademarks.html#guidelines
 - https://hokiesports.com/news/2025/11/17/james-franklin-announced-as-new-leader-of-virginia-tech-football
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Using random forest values and summary statistics to predict how well VT does in the future based on the head coaching change (Brent Pry to James Franklin)
 
