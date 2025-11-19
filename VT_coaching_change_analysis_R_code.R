@@ -5,11 +5,11 @@ VT_avg_wins_2022_2025 <- sum(virginia_tech_stats_2022_2025$Games_Won_VT)
 Penn_state_avg_wins_2022_2025 <- sum(penn_state_football_stats$Games_Won_PS)
 
 
-#Not a great metric right now, let's try win percentage rate
+#Not a great metric, lets try win percentage rate
 
 VT_win_percent <- sum(virginia_tech_stats_2022_2025$Games_Won_VT + 0) / sum(virginia_tech_stats_2022_2025$Games_Won_VT + virginia_tech_stats_2022_2025$Games_Lost_VT) * 100
 
-#40% winning percentage over the last 4 seasons from Brent Pry
+#40% winning percentage over the last 4 seasons
 
 PS_win_percentage <- sum(penn_state_football_stats$Games_Won_PS + 0) / sum(penn_state_football_stats$Games_Won_PS + penn_state_football_stats$Games_Lost_PS) * 100
 #73.1% winning percentage by James Franklin over the last 4 seasons
@@ -18,23 +18,23 @@ PS_win_percentage <- sum(penn_state_football_stats$Games_Won_PS + 0) / sum(penn_
 Penn_avg_ppg <- mean(penn_state_football_stats$PSU_Points_Per_Game) #33.9 pts per game on average
 VT_avg_ppg <- mean(virginia_tech_stats_2022_2025$VT_Points_Per_Game) #25.1 pts per game on average
 
-#for ML
+# Load required libraries
 library(readxl)
 library(caret)
 library(randomForest)
 library(iml)
 
-# Loading data
-vt_data <- read_excel("virginia_tech_stats_2022_2025.xlsx")
-ps_data <- read_excel("penn_state_football_stats.xlsx")
+# Load Excel data
+vt_data <- read_excel("C:/Users/bharg/Downloads/virginia_tech_stats_2022_2025.xlsx")
+ps_data <- read_excel("C:/Users/bharg/Downloads/penn_state_football_stats.xlsx")
 
-# identifiers
+# Add identifiers
 vt_data$Team <- "VT"
 vt_data$Coach <- "Brent Pry"
 ps_data$Team <- "PSU"
 ps_data$Coach <- "James Franklin"
 
-# Combine datasets for modeling
+# Combine datasets for modeling, including all relevant columns
 combined_data <- rbind(
   data.frame(
     Team = vt_data$Team,
@@ -60,13 +60,13 @@ combined_data <- rbind(
   )
 )
 
-# calculating win percentage based on all of these features/variables
+# Feature engineering: calculate win percentage
 combined_data$Win_Percentage <- combined_data$Games_Won / (combined_data$Games_Won + combined_data$Games_Lost) * 100
 
-# Encode Coach as a factor (meaning that we are studying how the coach change affects the win rate)
+# Encode Coach as factor
 combined_data$Coach <- as.factor(combined_data$Coach)
 
-# Normalizing predictors
+# Normalize predictors (Min-Max scaling)
 normalize <- function(x) { (x - min(x, na.rm=TRUE)) / (max(x, na.rm=TRUE) - min(x, na.rm=TRUE)) }
 predictor_cols <- c("Games_Won", "Games_Lost", "Points_Per_Game", "Offensive_Yards_passing",
                     "Offensive_Yards_Rushing", "TD", "Defensive_Yards_Allowed_Per_Game")
@@ -76,7 +76,8 @@ combined_data[predictor_cols] <- lapply(combined_data[predictor_cols], normalize
 train_data <- subset(combined_data, Coach == "James Franklin")
 test_data <- subset(combined_data, Team == "VT")
 
-# Train Random Forest
+# Train Random Forest model using all normalized predictors
+set.seed(42)
 rf_model <- train(
   Win_Percentage ~ Games_Won + Games_Lost + Points_Per_Game +
     Offensive_Yards_passing + Offensive_Yards_Rushing + TD + Defensive_Yards_Allowed_Per_Game,
@@ -98,7 +99,9 @@ print(avg_predicted_win_percent)
 train_predictors <- train_data[, predictor_cols]
 predictor <- Predictor$new(rf_model, data = train_predictors, y = train_data$Win_Percentage)
 
+# Compute and plot SHAP values for the first VT test row
 test_predictors <- test_data[, predictor_cols]
 shap <- Shapley$new(predictor, x.interest = test_predictors[1, ])
 print(shap$results)
 plot(shap)
+
