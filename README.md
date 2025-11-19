@@ -1,4 +1,4 @@
-# VT_Head_Coach_Change_Analysis_in_R (November 2025)
+# CFB_VT_Head_Coach_Change_Analysis_in_R (November 2025)
 
 <img width="400" height="283" alt="image" src="https://github.com/user-attachments/assets/eea3f376-f30e-44cb-a3f9-e41fa2474f91" />  
 
