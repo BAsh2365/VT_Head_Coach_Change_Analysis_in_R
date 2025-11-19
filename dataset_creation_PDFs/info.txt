@@ -1,3 +1,3 @@
 This folder contains all the files that were used in the data collection process for the R script.
 
-You can import the data manually into Excel/CSV, or you can use an AI model to help you organize your data.
+You can import the data manually into Excel/CSV, or you can use an AI model to help you organize your data (if you want to start from scratch/do other calculations with the data).
