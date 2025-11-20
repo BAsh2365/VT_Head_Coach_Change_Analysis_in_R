@@ -77,9 +77,26 @@ with the values shown here:
 <img width="650" height="337" alt="image" src="https://github.com/user-attachments/assets/9ed907f5-1d63-436c-ae89-c828ebbd38eb" />
 
 
-The RSME/RAE LOOCV results shown here (leaving one value out for cross-validation for more accurate model results due to sample size):
+The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validation for more accurate model results due to sample size, a type of K-fold cross-validation):
 
 <img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
+
+
+# Advanced Analysis Ridge Regression (Model assumptions)
+
+- High VIF mitigated with Ridge Regression + LOOCV normalization (No multicollinearity) 
+
+RMSE LOOCV plot:
+
+<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/24af49e3-697c-4585-a71c-913430dc0ef6" />
+
+Here, we see that the regularization parameter (L2) is measured against the RMSE within the LOOCV Ridge Model. We see values that are optimal for the RMSE and values that are underfitted. Choosing the best RMSE value comes directly from this plot when considering model evaluation. 
+
+- Homoscedasticity is not that straightforward to calculate with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
+
+  The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
+
+
 
 
 These models are not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me. Ridge regression seems to be more accurate for the given sample size.
@@ -104,6 +121,16 @@ https://machinelearningmastery.com/loocv-for-evaluating-machine-learning-algorit
 https://www.rdocumentation.org/packages/ranger/versions/0.16.0/topics/ranger
 
 https://datascienceharp.medium.com/cant-decide-between-a-linear-regression-or-a-random-forest-here-let-me-help-ab941b94da4c
+
+https://www.ibm.com/think/topics/ridge-regression
+
+https://www.geeksforgeeks.org/machine-learning/what-is-ridge-regression/
+
+https://rpubs.com/mpfoley73/521922#:~:text=As%20%CE%BB%E2%86%920%2C%20ridge,or%20BIC)%2C%20or%20Rsquared
+
+https://www.r-bloggers.com/2017/01/basic-assumptions-to-be-taken-care-of-when-building-a-predictive-model-2/
+
+https://carpentries-incubator.github.io/simple-linear-regression-public-health/05-fitAndAssumptionSLR/index.html
 
 Use of Claude 4.5 Sonnet for organized data cleaning/collection
 
