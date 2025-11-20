@@ -1,4 +1,4 @@
-# CFB_VT_Head_Coach_Change_Analysis_in_R (November 2025)
+# CFB_VT_Head_Coach_Change_Analysis_in_R (November 2025, Bhargav Ashok)
 
 <img width="400" height="283" alt="image" src="https://github.com/user-attachments/assets/eea3f376-f30e-44cb-a3f9-e41fa2474f91" />  
 
@@ -99,7 +99,28 @@ Here, we see that the regularization parameter (L2) is measured against the RMSE
 
 
 
-These models are not perfect and can always be improved upon! If you have any issues/suggestions with/for the model, you can reach out to me. Ridge regression seems to be more accurate for the given sample size.
+These models are not perfect and can always be improved upon! If you have any issues/suggestions regarding the model, please don't hesitate to contact me. Ridge regression seems to be more accurate for the given sample size.
+
+# Final Predictions for James Franklin (12-game season, excluding bowl games)
+
+I am going to be optimistic for Coach Franklin, given the small dataset for a specific comparison over 4 seasons (leaving out decades of coaching experience from Franklin). It will take some time to adjust, but based on the recent press conference with Franklin and his commitment to VT football, with his quotes below, I am feeling optimistic:
+
+"A couple things, right? I'm a big believer that this is still a game, a developmental game of young men, and that's developing them on the football field. That's developing them in the classroom. That's developing them to be prepared for the next phase of their life. I still believe that you can run your program from an old school perspective. I want this to be transformational, not transactional".
+
+"It starts with alignment and it starts with commitment when you ask about why do you have that type of confidence because we were a drive away last year from playing in the national championship. So, I know what it looks like. I know what you need to do. We learn from that experience. We grew from that experience. Again, the alignment, the commitment based on what we've done in our past, as well. You pour all these things together at a place that's got great history, that's got great traditions, that's got great pride. You look at today, you look at how this how this facility is packed. Again, my good friends, the Corps over there as well. There's some things that are unique. But I will also say this. One of the mistakes that I think coaches make and one of the things that I think search committees make is they try to go hire somebody to go bring that to their place. All these places are unique and sophisticated. There are lessons from Vanderbilt. There are lessons from Penn State. But the reality is, I'm gonna need to lean into all these men, Coach Beamer, Coach Foster and understand the institutional knowledge, the community knowledge, and be able to take my experiences and intertwine them with the university with the community knowledge with the institutional knowledge to put Virginia Tech in the best position to be successful. And that's what this sprint and marathon at the same time are going to be about over the next six months so that we can put a product on the field that everybody's really excited about."
+
+Not to mention the respect paid to Brent Pry.
+
+Link to the full article of the press conference here: https://www.si.com/college/virginiatech/football/everything-from-new-virginia-tech-head-coach-james-franklin-s-introductory-press-conference-01kaefnwwahc
+
+
+**Floor: 7-5**
+
+**Middle-Ground: 8-4**
+
+**Ceiling: 9-3**
+
+Wishing Coach Pry and Coach Franklin the best in their endeavors in this new era! 
 
 
 # References 
