@@ -81,6 +81,8 @@ The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validatio
 
 <img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
 
+RAE (relative absolute error) measures how well our model performs factoring LOOCV, more info found here: https://www.statisticshowto.com/relative-absolute-error/
+
 
 # Advanced Analysis Ridge Regression (Model assumptions)
 
@@ -159,6 +161,8 @@ https://rpubs.com/mpfoley73/521922#:~:text=As%20%CE%BB%E2%86%920%2C%20ridge,or%2
 https://www.r-bloggers.com/2017/01/basic-assumptions-to-be-taken-care-of-when-building-a-predictive-model-2/
 
 https://carpentries-incubator.github.io/simple-linear-regression-public-health/05-fitAndAssumptionSLR/index.html
+
+https://www.statisticshowto.com/relative-absolute-error/
 
 Use of Claude 4.5 Sonnet for organized data cleaning/collection
 
