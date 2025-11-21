@@ -13,7 +13,7 @@ Images taken from:
 
 Using random forest regression values (Corrected to Ridge Regression, see below to compare model results) (MAE and RMSE, not OOB and Confusion Matrix) and summary statistics to predict how well VT does in the future based on the head coaching change (Brent Pry to James Franklin)
 
-This R code showcases the shift in the Virginia Tech Locker room with head coach James Franklin taking over the program. Franklin (previously at Penn State and Vanderbuilt with over a deacde of experience) has a 68% win rate over 188 games.
+This R code showcases the shift in the Virginia Tech Locker room with head coach James Franklin taking over the program. Franklin (previously at Penn State and Vanderbuilt with over a decade of experience) has a 68% win rate over 188 games.
 
 To predict and compare how Franklin MAY do compared to previous locker rooms, we must level the playing field before running our Machine Learning Model.
 
