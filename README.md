@@ -94,11 +94,13 @@ Here, we see that the regularization parameter (L2) is measured against the RMSE
 
 - Homoscedasticity is not that straightforward to calculate with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
 
+- plotting the residuals (predicted vs normal/observed values) is not needed due to ridge regression account for any abnormalities in the data. 
+
 - The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
 
 
-- it is important to note the R^2 value here. We can explain the predicted outcomes abd variability of the data based on the correlation all factors have against win percentage rate.
-- Since there is a slight correlation after L2 Regularization, we will assume the correlation to be more accurate compared to the previous model.
+- it is important to note the R^2 value here. We can explain the predicted outcomes and variability of the data based on the correlation all factors have against win percentage rate.
+- Since there is a slight correlation after L2 Regularization, we will assume the predicted values to be more accurate compared to the previous model.
 
 
 These models are not perfect and can always be improved upon! If you have any issues/suggestions regarding the model, please don't hesitate to contact me. Ridge regression seems to be more accurate for the given sample size.
