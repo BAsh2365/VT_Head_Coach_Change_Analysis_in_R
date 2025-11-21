@@ -117,12 +117,15 @@ Not to mention the respect paid to Brent Pry.
 
 Link to the full article of the press conference here: https://www.si.com/college/virginiatech/football/everything-from-new-virginia-tech-head-coach-james-franklin-s-introductory-press-conference-01kaefnwwahc
 
+Based on the data above:
 
 **Floor: 7-5**
 
 **Middle-Ground: 8-4**
 
 **Ceiling: 10-2**
+
+(Excluding Bowl games, which the hokies will win 😎 (#bias))
 
 Wishing Coach Pry and Coach Franklin the best in their endeavors in this new era! 
 
