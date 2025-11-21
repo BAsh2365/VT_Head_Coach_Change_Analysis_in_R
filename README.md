@@ -164,6 +164,8 @@ https://carpentries-incubator.github.io/simple-linear-regression-public-health/0
 
 https://www.statisticshowto.com/relative-absolute-error/
 
+https://www.digitalocean.com/community/tutorials/ridge-regression-explained-part-2
+
 Use of Claude 4.5 Sonnet for organized data cleaning/collection
 
 Use of GitHub Copilot for Code Assistance on Model fit (random forest ML vs Ridge), debugging/accuracy, and Normalizing Predictors 
