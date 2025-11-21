@@ -94,7 +94,7 @@ Here, we see that the regularization parameter (L2) is measured against the RMSE
 
 - Homoscedasticity is not that straightforward to calculate with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
 
-  The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
+- The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
 
 
 - it is important to note the R^2 value here. We can explain the predicted outcomes abd variability of the data based on the correlation all factors have against win percentage rate.
@@ -165,7 +165,7 @@ PDF files of VT stats and PSU stats can be found in this GitHub Repo
 # Future improvements
 
 - Testing out more ML models
-- Gathering more data
+- Gathering more data for more accurate predictions within random forest  
 - Adding in confounding variables to see the weights + biases (how it influences the models)
 - Up to date data pipeline 
 
