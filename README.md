@@ -122,7 +122,7 @@ Link to the full article of the press conference here: https://www.si.com/colleg
 
 **Middle-Ground: 8-4**
 
-**Ceiling: 9-3**
+**Ceiling: 10-2**
 
 Wishing Coach Pry and Coach Franklin the best in their endeavors in this new era! 
 
