@@ -81,7 +81,7 @@ The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validatio
 
 <img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
 
-RAE (relative absolute error) measures how well our model performs factoring LOOCV, more info found here: https://www.statisticshowto.com/relative-absolute-error/
+RAE (relative absolute error) measures how well our model performs factoring LOOCV in, more info found here: https://www.statisticshowto.com/relative-absolute-error/
 
 
 # Advanced Analysis Ridge Regression (Model assumptions)
