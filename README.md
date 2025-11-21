@@ -94,7 +94,7 @@ Here, we see that the regularization parameter (L2) is measured against the RMSE
 
 - Homoscedasticity is not that straightforward to calculate with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
 
-- plotting the residuals (predicted vs normal/observed values) is not needed due to ridge regression account for any abnormalities in the data. 
+- plotting the residuals (predicted vs normal/observed values) is not needed since ridge regression accounts for any abnormalities in the data. 
 
 - The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
 
