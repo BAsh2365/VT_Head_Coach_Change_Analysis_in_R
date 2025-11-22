@@ -94,7 +94,7 @@ RMSE LOOCV plot:
 
 Here, we see that the regularization parameter (L2) is measured against the RMSE within the LOOCV Ridge Model. We see values that are optimal for the RMSE and values that are underfitted. Choosing the best RMSE value comes directly from this plot when considering model evaluation. 
 
-- Homoscedasticity is not that straightforward to calculate with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
+- Homoscedasticity is not that straightforward to calculate (though easy to plot in R) with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
 
 - plotting the residuals (predicted vs normal/observed values) is not needed since ridge regression accounts for any abnormalities in the data. 
 
