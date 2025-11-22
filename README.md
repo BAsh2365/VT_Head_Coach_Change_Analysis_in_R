@@ -166,7 +166,7 @@ https://www.statisticshowto.com/relative-absolute-error/
 
 https://www.digitalocean.com/community/tutorials/ridge-regression-explained-part-2
 
-Use of Claude 4.5 Sonnet for organized data cleaning/collection
+Use of Claude 4.5 Sonnet for inital organized data cleaning/collection (not used for adding features/data exploration)
 
 Use of GitHub Copilot for Code Assistance on Model fitting (random forest, Ridge), debugging/accuracy, and Normalizing Predictors 
 
