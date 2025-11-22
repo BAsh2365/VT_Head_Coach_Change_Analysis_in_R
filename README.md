@@ -168,7 +168,7 @@ https://www.digitalocean.com/community/tutorials/ridge-regression-explained-part
 
 Use of Claude 4.5 Sonnet for inital organized data cleaning/collection (not used for adding features/data exploration)
 
-Use of GitHub Copilot for Code Assistance on Model fitting (random forest, Ridge), debugging/accuracy, and Normalizing Predictors 
+Use of GitHub Copilot for Code Assistance on Model fitting (random forest), debugging/accuracy, and Normalizing Predictors 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
