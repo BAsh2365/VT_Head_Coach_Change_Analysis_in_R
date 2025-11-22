@@ -135,14 +135,14 @@ avg_predicted_win_percent <- mean(ridge_pred)
 cat("Average predicted VT win percentage under James Franklin (Ridge):\n")
 print(avg_predicted_win_percent)
 
-# ----- LOOCV metrics explicitly from saved predictions -----
+# ----- LOOCV metrics from predictions -----
 loocv_metrics <- caret::postResample(
   pred = ridge_model$pred$pred,
   obs  = ridge_model$pred$obs
 )
 print(loocv_metrics)  # RMSE, R^2, MAE
 
-# ----- RAE on LOOCV (optional) -----
+# ----- RAE on LOOCV (relative abs. error should be low) -----
 rae <- with(ridge_model$pred,
             sum(abs(obs - pred)) / sum(abs(obs - mean(obs)))
 )
