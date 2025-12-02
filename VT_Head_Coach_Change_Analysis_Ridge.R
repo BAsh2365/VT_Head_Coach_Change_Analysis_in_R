@@ -25,8 +25,8 @@ library(glmnet)
 library(iml)
 
 
-vt_data <- read_excel("C:/Users/bharg/Downloads/virginia_tech_stats_2022_2025.xlsx")
-ps_data <- read_excel("C:/Users/bharg/Downloads/penn_state_football_stats.xlsx")
+vt_data <- read_excel("virginia_tech_stats_2022_2025.xlsx")
+ps_data <- read_excel("penn_state_football_stats.xlsx")
 
 
 vt_data$Team  <- "VT"
