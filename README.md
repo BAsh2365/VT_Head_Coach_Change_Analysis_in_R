@@ -57,52 +57,47 @@ Given that Coach Franklin needs some time to settle in, adopt his recruitment st
 
 UPDATE: This Random Forest model, upon further inspection, is not the greatest model for accuracy, even with using an in-memory version (Ranger) (as the MAE and RMSE values don't line up with the R^2 value of 1, which indicates overfitting).
 
-# Ridge model regression Analysis (More accurate)
+# Ridge model regression Analysis (More accurate) UPDATE: FIXED DATA LEAKAGE ON DECEMBER 3RD, 2025
 
-We use the ridge model regression with a more accurate R^2 value of 0.512 instead of 1 with similar RSME and RAE stats.
+We use the ridge model regression with a more accurate R^2 value of 0.7650431 (updated, more accurate) instead of 1 with similar RSME and RAE stats.
 
 The Win percentage rates are shown here:
-
-<img width="781" height="181" alt="image" src="https://github.com/user-attachments/assets/eb9fa707-6aaa-499a-b41f-2b4c40193457" />
+<img width="799" height="163" alt="image" src="https://github.com/user-attachments/assets/e979538c-4d18-41f6-a02d-d58991a77705" />
 
 Similar estimates, with Coach Franklin projected to win about 6 to 7 games in a full 12-game season as he takes over.
 
 The SHAP values plot for the more accurate Ridge regression is shown here:
 
-<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/56f6a8e2-1b29-4f7f-9ade-74c5f749708f" />
+<img width="743" height="573" alt="image" src="https://github.com/user-attachments/assets/37fe473b-5c6f-4cc6-a6e5-e90c2529d552" />
 
-Points per game and games lost are the two big contributors here for our model.
+Points per game and TDs are the two big weighted contributors here for our model.
 
 with the values shown here:
-<img width="650" height="337" alt="image" src="https://github.com/user-attachments/assets/9ed907f5-1d63-436c-ae89-c828ebbd38eb" />
+<img width="672" height="301" alt="image" src="https://github.com/user-attachments/assets/36b7346a-29f5-4dca-b74e-df4d3674b6cd" />
 
 
 The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validation for more accurate model results due to sample size, a type of K-fold cross-validation):
 
-<img width="673" height="199" alt="image" src="https://github.com/user-attachments/assets/bad611ed-a6e2-420a-a787-d6e4238eecef" />
+<img width="707" height="202" alt="image" src="https://github.com/user-attachments/assets/c76531ea-8116-41d1-9a62-a2e9e68307d1" />
 
-RAE (relative absolute error) measures how well our model performs factoring LOOCV in, more info found here: https://www.statisticshowto.com/relative-absolute-error/
+RAE (relative absolute error) measures how well our model performs, factoring LOOCV in, more info found here: https://www.statisticshowto.com/relative-absolute-error/
 
 
 # Advanced Analysis Ridge Regression (Model assumptions)
 
-- High VIF mitigated with Ridge Regression + LOOCV normalization (No multicollinearity) 
+- High VIF mitigated with Ridge Regression + LOOCV normalization (FIXED DATA LEAKAGE AS WELL) (No multicollinearity) 
 
-RMSE LOOCV plot:
+The regularization parameter (L2) is measured against the RMSE within the LOOCV Ridge Model. Values that are optimal for the RMSE will appear on a graph with near-zero values. Choosing the best RMSE value comes directly from this plot when considering model evaluation. 
 
-<img width="861" height="587" alt="image" src="https://github.com/user-attachments/assets/24af49e3-697c-4585-a71c-913430dc0ef6" />
-
-Here, we see that the regularization parameter (L2) is measured against the RMSE within the LOOCV Ridge Model. We see values that are optimal for the RMSE and values that are underfitted. Choosing the best RMSE value comes directly from this plot when considering model evaluation. 
-
-- Homoscedasticity is not that straightforward to calculate (though easy to plot in R) with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization
+- Homoscedasticity is not that straightforward to calculate (though easy to plot in R) with Ridge regression since the parameters are normalized; however, you can assume that homoscedasticity is achieved with regularization (for now).
 
 - plotting the residuals (predicted vs normal/observed values) is not needed since ridge regression accounts for any abnormalities in the data. 
 
 - The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
 
 
-- it is important to note the R^2 value here. We can explain the predicted outcomes and variability of the data based on the correlation all factors have against win percentage rate.
-- Since there is a slight correlation after L2 Regularization, we will assume the predicted values to be more accurate compared to the previous model.
+- It is important to note the R^2 value here. We can explain the predicted outcomes and variability of the data based on the correlation of all factors against the win percentage rate.
+- Since there is a good correlation after L2 Regularization, we will assume the predicted values to be more accurate compared to the previous model.
 
 
 These models are not perfect and can always be improved upon! If you have any issues/suggestions regarding the model, please don't hesitate to contact me. Ridge regression seems to be more accurate for the given sample size.
@@ -173,7 +168,8 @@ Use of GitHub Copilot for Code Assistance on Model fitting (random forest), sema
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
 # Dashboard
-<img width="1906" height="1063" alt="image" src="https://github.com/user-attachments/assets/1e6c595f-098e-4708-8e50-fb7dcb37aea1" />
+<img width="1439" height="1003" alt="image" src="https://github.com/user-attachments/assets/5ffe0259-c3d8-4862-a717-68e0df02ac2d" />
+
 
 References for code and stats:
 - https://pkgs.rstudio.com/flexdashboard/articles/theme.html
@@ -183,7 +179,7 @@ References for code and stats:
 - https://247sports.com/college/virginia-tech/season/2026-football/commits/
 
 Use of Claude 4.5 sonnet to organize dashboards 
-https://www.ibm.com/think/topics/data-leakage-machine-learning
+https://www.ibm.com/think/topics/data-leakage-machine-learning (FIXED DATA LEAKAGE, silly mistake here with the values)
 
 
 # Future improvements
