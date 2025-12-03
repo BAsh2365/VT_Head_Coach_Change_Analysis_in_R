@@ -166,9 +166,9 @@ https://www.statisticshowto.com/relative-absolute-error/
 
 https://www.digitalocean.com/community/tutorials/ridge-regression-explained-part-2
 
-Use of Claude 4.5 Sonnet for inital organized data cleaning/collection (not used for adding features/data exploration)
+Use of Claude 4.5 Sonnet for initial organized data cleaning/collection (not used for adding features/data exploration)
 
-Use of GitHub Copilot for Code Assistance on Model fitting (random forest), debugging/accuracy, and Normalizing Predictors 
+Use of GitHub Copilot for Code Assistance on Model fitting (random forest), semantic debugging/accuracy, and Normalizing Predictors (UPDATE: No need to normalize as glmnet regression does it for you) 
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
 
