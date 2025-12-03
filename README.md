@@ -178,8 +178,8 @@ References for code and stats:
 - https://rstudio.github.io/flexdashboard/articles/using.html
 - https://247sports.com/college/virginia-tech/season/2026-football/commits/
 
-Use of Claude 4.5 sonnet to organize dashboards 
-https://www.ibm.com/think/topics/data-leakage-machine-learning (FIXED DATA LEAKAGE, silly mistake here with the values)
+- Use of Claude 4.5 sonnet to organize dashboards 
+- https://www.ibm.com/think/topics/data-leakage-machine-learning (FIXED DATA LEAKAGE, silly mistake here with the values, predictions still stand)
 
 
 # Future improvements
