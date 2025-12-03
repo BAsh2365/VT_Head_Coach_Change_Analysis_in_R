@@ -67,15 +67,6 @@ combined_data$Win_Percentage <- combined_data$Games_Won /
 # Encode Coach as factor
 combined_data$Coach <- as.factor(combined_data$Coach)
 
-# ----- Normalize predictors (Min–Max) -----
-minmax_scale <- function(x) {
-  lo <- min(x, na.rm = TRUE)
-  hi <- max(x, na.rm = TRUE)
-  rng <- hi - lo
-  if (!is.finite(rng) || rng == 0) return(rep(0, length(x)))
-  (x - lo) / rng
-}
-
 predictor_cols <- c(
   "Games_Won", "Games_Lost", "Points_Per_Game",
   "Offensive_Yards_passing", "Offensive_Yards_Rushing",
