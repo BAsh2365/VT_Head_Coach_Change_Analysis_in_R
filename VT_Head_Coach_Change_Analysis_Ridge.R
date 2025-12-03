@@ -73,10 +73,6 @@ predictor_cols <- c(
   "TD", "Defensive_Yards_Allowed_Per_Game"
 )
 
-for (col in predictor_cols) {
-  combined_data[[col]] <- minmax_scale(combined_data[[col]])
-}
-
 # ----- Train/test split -----
 train_data <- subset(combined_data, Coach == "James Franklin")
 test_data  <- subset(combined_data, Team  == "VT")
