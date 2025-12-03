@@ -43,6 +43,7 @@ combined_data <- rbind(
     Points_Per_Game = vt_data$VT_Points_Per_Game,
     Offensive_Yards_passing = vt_data$VT_Pass_Total_Yards,
     Offensive_Yards_Rushing = vt_data$VT_Rush_Total_Yards,
+    Turnovers = vt_data$OPP_Points_Off_Turnovers,
     TD = vt_data$VT_Total_TDs,
     Defensive_Yards_Allowed_Per_Game = vt_data$OPP_Avg_Yards_Per_Game,
     Coach = vt_data$Coach
@@ -54,6 +55,7 @@ combined_data <- rbind(
     Points_Per_Game = ps_data$PSU_Points_Per_Game,
     Offensive_Yards_passing = ps_data$PSU_Passing_Total,
     Offensive_Yards_Rushing = ps_data$PSU_Rushing_Total,
+    Turnovers = ps_data$OPP_Points_Off_Turnovers,
     TD = ps_data$PSU_Total_TDs_Scored,
     Defensive_Yards_Allowed_Per_Game = ps_data$OPP_Avg_Per_Game,
     Coach = ps_data$Coach
@@ -67,9 +69,8 @@ combined_data$Win_Percentage <- combined_data$Games_Won /
 # Encode Coach as factor
 combined_data$Coach <- as.factor(combined_data$Coach)
 
-predictor_cols <- c(
-  "Games_Won", "Games_Lost", "Points_Per_Game",
-  "Offensive_Yards_passing", "Offensive_Yards_Rushing",
+predictor_cols <- c( "Points_Per_Game",
+  "Offensive_Yards_passing", "Offensive_Yards_Rushing", "Turnovers",
   "TD", "Defensive_Yards_Allowed_Per_Game"
 )
 
