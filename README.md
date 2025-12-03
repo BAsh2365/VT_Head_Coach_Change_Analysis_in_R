@@ -168,17 +168,30 @@ https://www.digitalocean.com/community/tutorials/ridge-regression-explained-part
 
 Use of Claude 4.5 Sonnet for initial organized data cleaning/collection (not used for adding features/data exploration)
 
-Use of GitHub Copilot for Code Assistance on Model fitting (random forest), semantic debugging/accuracy, and Normalizing Predictors (UPDATE: No need to normalize as glmnet regression does it for you) 
+Use of GitHub Copilot for Code Assistance on Model fitting (random forest), semantic debugging/accuracy
 
 PDF files of VT stats and PSU stats can be found in this GitHub Repo
+
+# Dashboard
+<img width="1906" height="1063" alt="image" src="https://github.com/user-attachments/assets/1e6c595f-098e-4708-8e50-fb7dcb37aea1" />
+
+References for code and stats:
+- https://pkgs.rstudio.com/flexdashboard/articles/theme.html
+- https://rstudio.github.io/bslib/articles/theming/
+- https://www.datylon.com/blog/types-of-charts-graphs-examples-data-visualization
+- https://rstudio.github.io/flexdashboard/articles/using.html
+- https://247sports.com/college/virginia-tech/season/2026-football/commits/
+
+Use of Claude 4.5 sonnet to organize dashboards 
+
 
 
 # Future improvements
 
 - Testing out more ML models
-- Gathering more data for more accurate predictions within random forest  
+- Gathering more data for more accurate predictions over time 
 - Adding in confounding variables to see the weights + biases (how it influences the models)
-- Up to date data pipeline 
+- Up-to-date data pipeline 
 
 
 
