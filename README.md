@@ -187,7 +187,7 @@ References for code and stats:
 # Future improvements
 
 - Testing out more ML models
-- Gathering more data for more accurate predictions over time 
+- Gathering more data for more accurate predictions over time (using syntheic data for larger sample sizes for both teams, more advanced ML/AI models if needed)
 - Adding in confounding variables to see the weights + biases (how it influences the models)
 - Up-to-date data pipeline 
 
