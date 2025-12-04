@@ -82,6 +82,8 @@ The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validatio
 
 RAE (relative absolute error) measures how well our model performs, factoring LOOCV in, more info found here: https://www.statisticshowto.com/relative-absolute-error/
 
+- Given the small dataset between Pry and Franklin's coaching years, and the numerous confounding variables at play (which we have ignored to focus on some of the main variables of prediction: TDs, Passing yards, rushing yards, turnovers, yards given up on defense, etc), these metrics should be ok in our potential prediciton.
+
 
 # Advanced Analysis Ridge Regression (Model assumptions)
 
@@ -95,8 +97,8 @@ The regularization parameter (L2) is measured against the RMSE within the LOOCV 
 
 - The code uses the Glmnet R package for ridge regression. If you did MLR or regular Linear regression, more model assumptions would come into play (using 'lm')
 
-
 - It is important to note the R^2 value here. We can explain the predicted outcomes and variability of the data based on the correlation of all factors against the win percentage rate.
+
 - Since there is a good correlation after L2 Regularization, we will assume the predicted values to be more accurate compared to the previous model.
 
 
