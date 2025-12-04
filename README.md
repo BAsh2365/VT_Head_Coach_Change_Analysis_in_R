@@ -82,7 +82,7 @@ The RMSE/RAE LOOCV results shown here (leaving one value out for cross-validatio
 
 RAE (relative absolute error) measures how well our model performs, factoring LOOCV in, more info found here: https://www.statisticshowto.com/relative-absolute-error/
 
-- Given the small dataset between Pry and Franklin's coaching years, and the numerous confounding variables at play (which we have ignored to focus on some of the main variables of prediction: TDs, Passing yards, rushing yards, turnovers, yards given up on defense, etc), these metrics should be ok in our potential prediciton.
+- Given the small dataset between Pry and Franklin's coaching years, and the numerous confounding variables at play (which we have ignored to focus on some of the main variables of prediction: TDs, Passing yards, rushing yards, turnovers, yards given up on defense, etc), these metrics should be ok in our potential prediciton. The model should be balanced from a knowledge standpoint, 2 predicitors are offensive based stats, and 2 are benefical to the defensive side of the ball (TDs are neutral as it takes data from both sides of the ball).
 
 
 # Advanced Analysis Ridge Regression (Model assumptions)
